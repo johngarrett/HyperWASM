@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/johngarrett/HyperSwift",
         "state": {
           "branch": "master",
-          "revision": "e9f61a98dceb15640ea7ba432597d955ece130e0",
+          "revision": "2307954debe1896b95b9363eadc55d4697393e7f",
           "version": null
+        }
+      },
+      {
+        "package": "JavaScriptKit",
+        "repositoryURL": "https://github.com/swiftwasm/JavaScriptKit",
+        "state": {
+          "branch": null,
+          "revision": "8ba4135d5fd6a734c3771ef3fac66896bbcb0214",
+          "version": "0.8.0"
         }
       }
     ]

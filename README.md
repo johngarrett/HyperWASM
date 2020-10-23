@@ -1,4 +1,3 @@
-#### HyperWASM
-End goal: to have a live editor for HyperSwift rendering in a web browser
+# HyperC
 
-- [swiftWASM](https://github.com/swiftwasm/JavaScriptKit)
+A description of this package.

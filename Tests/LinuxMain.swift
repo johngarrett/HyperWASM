@@ -1,7 +1,7 @@
 import XCTest
 
-import HyperWASMTests
+import HyperCTests
 
 var tests = [XCTestCaseEntry]()
-tests += HyperWASMTests.allTests()
+tests += HyperCTests.allTests()
 XCTMain(tests)

@@ -1,22 +1,20 @@
 // swift-tools-version:5.3
-
 import PackageDescription
-
 let package = Package(
-    name: "HyperWASM",
+    name: "HyperC",
     products: [
-        .executable(name: "HyperWASM", targets: ["HyperWASM"])
+        .executable(name: "HyperC", targets: ["HyperC"])
     ],
     dependencies: [
-        .package(url: "https://github.com/johngarrett/HyperSwift", .branch("master")),
-//        .package(name: "JavaScriptKit", url: "https://github.com/swiftwasm/JavaScriptKit.git", .branch("master"))
+        .package(name: "JavaScriptKit", url: "https://github.com/swiftwasm/JavaScriptKit", from: "0.8.0"),
+        .package(url: "https://github.com/johngarrett/HyperSwift", .branch("master"))
     ],
     targets: [
         .target(
-            name: "HyperWASM",
-            dependencies: ["HyperSwift"]),
-        .testTarget(
-            name: "HyperWASMTests",
-            dependencies: ["HyperWASM"]),
+            name: "HyperC",
+            dependencies: [
+                .product(name: "JavaScriptKit", package: "JavaScriptKit"),
+                .product(name: "HyperSwift", package: "HyperSwift")
+            ]),
     ]
 )

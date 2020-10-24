@@ -35,16 +35,21 @@ var page: HTMLElement {
                     </input>
                     """
                 )
-            }
+            }.minWidth(45, .percent)
     
             VStack(align: .center) {
                 Paragraph("Renderer")
                     .font(weight: .normal, size: 14, family: "Trispace")
-                RawHTML("<div id=\"help\"><p>Hello World!</p></div>")
-            }
+                Div {
+                    RawHTML("<div id=\"help\"><p>Hello World!</p></div>")
+                }.backgroundColor(CSSColor("#FFFFFF"))
+                .height(90, .percent)
+                .width(90, .percent)
+            }.minWidth(45, .percent)
         }
-        .width(100, .percent)
+        .margin(10)
         .height(80, .percent)
+        .backgroundColor(CSSColor("#e0cdc5"))
     }
 }
 
@@ -57,10 +62,9 @@ let buttonElement = document.createElement!("button").object!
 let reRender = JSClosure { _ in
     document.getElementById?("help").object?.innerHTML =
         JSValue(
-            stringLiteral: Div {
-                document.getElementById?("inputPane").object?.value.description
-                    ?? "<p>Hello World!</p>"
-            }.render()
+            stringLiteral: SynthesizedComponent(
+                document.getElementById?("inputPane").object?.value.description ?? ""
+            )!.render()
         )
 }
 
